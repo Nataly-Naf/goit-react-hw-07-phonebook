@@ -20,7 +20,7 @@ const formSquema = Yup.object().shape({
 export const NameForm = () => {
     const dispatch = useDispatch();
   const [value, setValue] = useState(0);
-   const contacts = useSelector(state=>state.contacts.contacts)
+   const contacts = useSelector(state=>state.contacts.contacts.items)
 
   console.log(value)
 

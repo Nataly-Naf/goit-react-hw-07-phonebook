@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FilterInput } from './FilterForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/contactsSlice';
-import { getFilter } from 'redux/selectors';
+import { selectFilter } from 'redux/selectors';
 
 export const FilterForm = () => {
   const [value, setValue] = useState('');
@@ -12,7 +12,7 @@ export const FilterForm = () => {
     dispatch(setFilter(value));
   }, [value, dispatch]);
 
-  const savedFilter = useSelector(getFilter);
+  const savedFilter = useSelector(selectFilter);
 
   return (
     <div>

@@ -30,7 +30,9 @@ export const NameForm = () => {
      const isInContacts = contacts.find(({ name }) => name.toLowerCase() === values.name.toLowerCase())
     if (isInContacts) {
   return alert(`This contact is in your contacts`)
-} 
+    } 
+      console.log(values);
+
     values.id = nanoid();
     dispatch(addContact(values));
     actions.resetForm();
@@ -38,7 +40,7 @@ export const NameForm = () => {
 
   return (
     <Formik
-      initialValues={{ id: nanoid(), name: '', number: '' }}
+      initialValues={{ id: nanoid(), name: '', phone: '' }}
       validationSchema={formSquema}
       onSubmit={handleSubmit}
     >
@@ -60,7 +62,7 @@ export const NameForm = () => {
           <StyledField
             name="number"
             onInput={handleInputChange}
-            placeholder="Phone number"
+            placeholder="number"
           />
           <ErrorMessage name="number" />
         </label>

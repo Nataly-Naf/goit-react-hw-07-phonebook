@@ -7,8 +7,7 @@ import { selectFilteredContacts } from 'redux/selectors';
 
 
 export const ContactsList = () => {
-  // const savedContacts = useSelector(selectContacts);
-  // const savedFilter = useSelector(selectFilter);
+
   
   const dispatch = useDispatch();
   const handleDelete = (id) => { console.log(id); dispatch(deleteContact(id)) }
